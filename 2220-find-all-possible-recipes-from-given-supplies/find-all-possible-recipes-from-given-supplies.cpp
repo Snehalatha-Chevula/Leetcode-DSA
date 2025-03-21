@@ -6,7 +6,7 @@ public:
             available.insert(ing);
         int n = recipes.size();
         vector<string> ans;
-        for(int i=0;i<n;i++){
+        for(int k=0;k<n;k++){
             for(int i=0;i<n;i++){
             if(available.find(recipes[i]) == available.end()){
                 bool pos = true;
