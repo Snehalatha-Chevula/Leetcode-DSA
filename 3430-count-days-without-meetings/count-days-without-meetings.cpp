@@ -5,20 +5,16 @@ public:
         int n = meetings.size();
         int c = 0;
         c += meetings[0][0] - 1;
-        int hi = meetings[0][1];
+        int end = meetings[0][1];
         for(int i=1;i<n;i++){
-            if(meetings[i][0] > hi){
-                c += meetings[i][0] - hi - 1;
-                hi = meetings[i][1];
+            if(meetings[i][0] > end){
+                c += meetings[i][0] - end - 1;
+                end = meetings[i][1];
             }
-            else{
-                if(meetings[i][1] > hi)
-                    hi = meetings[i][1];
-            }
+            else if(meetings[i][1] > end)
+                end = meetings[i][1];
         }
-        if(hi < days)
-            c += days-hi;
-        return c;
-        
+        c += (days - end);
+        return c;
     }
 };
