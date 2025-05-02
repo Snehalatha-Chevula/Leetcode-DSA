@@ -22,32 +22,23 @@ public:
             n++;
         }
         int i=1, total = n;
-        ListNode* head1 = NULL;
-        ListNode* prev = NULL;
+        temp = head;
         while(total/k){
             int cnt = k;
             int val = i*k-1;
             while(cnt){
-                ListNode* nn = new ListNode(values[val]);
+                temp->val = values[val];
                 val--;
                 cnt--;
                 total--;
-                if(!head1){
-                    head1 = nn;
-                    prev = head1;
-                }
-                else{
-                    prev->next = nn;
-                    prev = nn;
-                }
+                temp = temp->next;
             }
             i++;
         }
         for(int i=(n/k)*k;i<n;i++){
-            ListNode* nn = new ListNode(values[i]);
-            prev->next = nn;
-            prev = nn;
+            temp->val = values[i];
+            temp = temp->next;
         }
-        return head1;
+        return head;
     }
 };
