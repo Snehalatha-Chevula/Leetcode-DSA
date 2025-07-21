@@ -4,6 +4,8 @@ public:
         int lo = *min_element(bloomDay.begin(),bloomDay.end());
         int hi = *max_element(bloomDay.begin(),bloomDay.end());
         int ans = -1;
+        if(bloomDay.size()/k < m)
+            return -1;
         while(lo <= hi){
             int mid = (lo+hi)/2;
             if(isValid(bloomDay,m,k,mid)){
