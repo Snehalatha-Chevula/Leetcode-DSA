@@ -19,7 +19,6 @@ public:
     bool findBf(TreeNode* root){
         int lh = findHeight(root->left);
         int rh = findHeight(root->right);
-        cout <<lh <<" " <<rh <<endl;
         return (lh-rh >= -1) && (lh-rh <= 1);
     }
     bool inorder(TreeNode* root){
