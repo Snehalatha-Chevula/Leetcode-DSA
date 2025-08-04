@@ -11,18 +11,17 @@
  */
 class Solution {
 public:
-    bool solve(TreeNode* root, int targetSum, int curSum, int prevSum){
-        cout <<curSum <<" " <<prevSum <<endl;
+    bool solve(TreeNode* root, int targetSum, int curSum){
         if((root && !root->left && !root->right && curSum+root->val == targetSum))
             return true;
         if(root == NULL){
             return false;
         }
-        return solve(root->left, targetSum, curSum+root->val, curSum) || solve(root->right, targetSum, curSum+root->val, curSum);
+        return solve(root->left, targetSum, curSum+root->val) || solve(root->right, targetSum, curSum+root->val);
     }
     bool hasPathSum(TreeNode* root, int targetSum) {
         if(root == NULL)
             return false;
-        return solve(root, targetSum, 0, -1);
+        return solve(root, targetSum, 0);
     }
 };
