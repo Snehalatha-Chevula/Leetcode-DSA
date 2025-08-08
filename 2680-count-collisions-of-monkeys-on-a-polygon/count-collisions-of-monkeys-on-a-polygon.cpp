@@ -6,8 +6,8 @@ public:
             return 2;
         long long p = calculatePower(n/2)%m;
         if(n%2)
-            return (((p*p))*2);
-        return (p*p);
+            return p*p*2;
+        return p*p;
     }
     int monkeyMove(int n) {
         long ans = calculatePower(n);
