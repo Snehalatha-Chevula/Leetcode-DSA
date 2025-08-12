@@ -53,11 +53,7 @@ public:
                 int curFreq = n->freq;
                 int prevFreq = n->prev->freq;
                 if(n == freqMp[curFreq]){
-                    if(prevFreq == curFreq){
-                        freqMp[curFreq] = n->prev;
-                    }
-                    else
-                        freqMp.erase(curFreq);
+                    freqMp.erase(curFreq);
                 }
                 deleteNode(dummy->next);
             }
